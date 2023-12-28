@@ -12,5 +12,5 @@ export const searchCpf = async (eventId: number, cpf: string): Promise<SearchRes
     if (res.data.person && res.data.personMatched) {
         return res.data as SearchResult
     }
-    return false
+    throw new Error('Cpf não encontrado')
 }

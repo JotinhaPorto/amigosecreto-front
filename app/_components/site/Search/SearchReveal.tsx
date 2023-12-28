@@ -5,10 +5,8 @@ type SearchRevealProps = {
 }
 const SearchReveal = ({ result }: SearchRevealProps) => {
     return (
-        <div className="flex gap-2">
-            {result.person.name}
-            tirou
-            {result.personMatched.name}
+        <div className="flex flex-col gap-2 p-8">
+            <span>Parabéns, <span className="font-bold">{result.person.name}!</span> Você tirou <span className="font-bold">{result.personMatched.name}</span></span>
         </div>
     )
 }
