@@ -7,7 +7,7 @@ export const getEvent = async (id: number): Promise<Event | false> => {
     return res.data.events as Event ?? false
 }
 
-export const searchCpf = async (eventId: number, cpf: string) => {
+export const searchCpf = async (eventId: number, cpf: string): Promise<SearchResult | false> => {
     const res = await req.get(`/events/${eventId}/search?cpf=${cpf}`)
     if (res.data.person && res.data.personMatched) {
         return res.data as SearchResult
